@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UserCenterModule'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of UserCenterModule.'
+  s.version          = '1.0.1'
+  s.summary          = 'CTMediator 演示demo'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -31,12 +31,11 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'UserCenterModule/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'UserCenterModule' => ['UserCenterModule/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'UserCenterModule' => ['UserCenterModule/Assets/**/*']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.dependency 'CTMediator'
 end

@@ -1,10 +1,12 @@
 use_frameworks!
 
 platform :ios, '10.0'
+source 'https://github.com/CocoaPods/Specs.git'
 
 target 'UserCenterModule_Example' do
   pod 'UserCenterModule', :path => '../'
-
+  
+  
   target 'UserCenterModule_Tests' do
     inherit! :search_paths
 
