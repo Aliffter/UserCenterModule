@@ -2,7 +2,7 @@ use_frameworks!
 
 platform :ios, '10.0'
 source 'https://github.com/CocoaPods/Specs.git'
-
+source 'https://github.com/Aliffter/LXPodSpec.git'
 target 'UserCenterModule_Example' do
   pod 'UserCenterModule', :path => '../'
   

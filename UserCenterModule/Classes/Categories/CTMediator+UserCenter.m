@@ -28,10 +28,12 @@ NSString * const kCTMediatorTarget = @"UserCenter";
    
     UIImage *image = [UIImage imageNamed:@"heart_icon"];
     NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"UserCenterViewController")];
-    UIImage *image2 = [UIImage imageNamed:@"heart_icon" inBundle:bundle compatibleWithTraitCollection:nil];
+    NSString *imgBundlePath = [bundle.resourcePath stringByAppendingFormat:@"%@",@"/UserCenterModule.xcassets"];
+    NSBundle *imgBundle = [NSBundle bundleWithPath:imgBundlePath];
+    UIImage *image2 = [UIImage imageNamed:@"heart_icon" inBundle:imgBundle compatibleWithTraitCollection:nil];
     NSLog(@"imagexxx:%@ - %@",image,image2);
 
-    UIViewController *viewController = [self performTarget:kCTMediatorTarget action:@"nativeFetchDetailViewController" params:@{@"userID":userID,@"image":image} shouldCacheTarget:false];
+    UIViewController *viewController = [self performTarget:kCTMediatorTarget action:@"nativeFetchDetailViewController" params:@{@"userID":userID,@"image":image2} shouldCacheTarget:false];
     if ([viewController isKindOfClass:[UIViewController class]]) {
         // view controller 交付出去之后，可以由外界选择是push还是present
         return viewController;
